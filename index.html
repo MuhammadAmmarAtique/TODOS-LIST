@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   </head>
   <body>
-<!-- 1) Navbar -->
+ <!-- 1) Navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">TODOs List</a>
@@ -18,13 +18,13 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link " href="#youritems">Your Items</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#aboutus">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="#contactus">Contact</a>
               </li>
             </ul>
             <form class="d-flex" role="search">
@@ -35,14 +35,14 @@
         </div>
       </nav>
 
-<!--2) Making div where i will make todos list  -->
+ <!--2) Making div where i will make todos list  -->
 
       <!-- my is a class in bootstrap which adds margin to the element  -->
-      <div class="container my-3">
+<div class="container my-4">
         <h2 class="text-center">TODOs List</h2>
         <!-- text-center is a class in bootstrap which aligns items to the center -->
 
-<!-- 3) Bootsrtap form -->
+ <!-- 3) Bootsrtap form -->
         <form class="">
           <div class="mb-3 ">
             <label class="form-label">Title</label>
@@ -58,11 +58,11 @@
           <button type="submit" class="btn btn-primary">Add to list</button>
        </form>
     
-       <div class="items my-4">
-        <h2 class="">Your Items</h2>
-<!--4) Bootstrap table -->
+       <div class="items my-5">
+        <h2  id="youritems">Your Items</h2>
+ <!--4) Bootstrap table -->
 
-      <table class="table">
+      <table class="table ">
         <thead>
           <tr>
             <th scope="col">Serial No.</th>
@@ -80,9 +80,37 @@
           </tr>
         </tbody>
       </table>
+ <!--4) About us section-->
 
-       </div>
+      <div id="aboutus" class="my-5">
+        <h2>About us</h2>
+        <p style="text-align: left;">This javascript app is developed by Muhammad Ammar Atique as a showcase of Javacript skills. Javascript is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. As of 2023, 98.7% of websites use JavaScript on the client side for webpage behavior, often incorporating third-party libraries.</p>
+        <P style="text-align: left;">JavaScript is a high-level, often just-in-time compiled language that conforms to the ECMAScript standard.[11] It has dynamic typing, prototype-based object-orientation, and first-class functions. It is multi-paradigm, supporting event-driven, functional, and imperative programming styles. It has application programming interfaces (APIs) for working with text, dates, regular expressions, standard data structures, and the Document Object Model (DOM).</P>
+      </div> <hr>
 
+ <!--4) Contact us section-->
+
+      <div id="contactus" class="my-5">
+        <h2>Contact us</h2>
+
+        <div class="contactus-text">
+            <p> Have questions or feedback? Get in touch with us: </p>
+          
+            <p>Email: muhammadammaratique@gmail.com <br>
+               Phone: 03169229322 <p> 
+           
+            <p> Business Hours:<br>
+              - Mon-Fri: 9 AM - 6 PM (Pakistan Standard Time)<br>
+              - Sat: 10 AM - 4 PM (Pakistan Standard Time)<br>
+              - Sun: Closed  </p>
+
+            <p>We're here to assist you. Feel free to drop us a line anytime! <br>
+               Ammar's Solutions PVT LTD </p>
+        </div> 
+
+      </div>
+
+</div>
 
 
       <!-- Attached bootstrap JS -->
