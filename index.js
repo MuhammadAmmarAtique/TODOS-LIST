@@ -66,7 +66,7 @@ update();
 // Activating delete button from "your items section"
 function remove (index)
 {
-    console.log("deleted list item:",index+1);
+    // console.log("deleted list item:",index+1);
 
     let arrstring=localStorage.getItem('jsonitems');
     arr=JSON.parse(arrstring);
