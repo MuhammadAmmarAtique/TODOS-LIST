@@ -5,7 +5,7 @@ This repository contains a simple web application for managing your TODO list. I
 
 ## Preview
 
-![TODOs List Preview](screenshot.png)
+![TODOs List Preview](preview.png)
 
 ## Features
 
