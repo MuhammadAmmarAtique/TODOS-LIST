@@ -53,7 +53,6 @@ function update ()
     </tr>
     `  
     });
-
     // remove function is calling in above line
     
     tablebody.innerHTML=str;
@@ -75,4 +74,24 @@ function remove (index)
     arr.splice(index,1);
     localStorage.setItem('jsonitems',JSON.stringify(arr));
     update();
+}
+
+
+// Added Delete Full list button
+function deletefulllist() 
+{
+   let confirmationmsg= confirm("Are you sure you want to delete the full list?");
+    if (confirmationmsg) 
+    {
+        let arrstring=localStorage.getItem('jsonitems');
+        arr=JSON.parse(arrstring);
+        arr.splice(0);
+        localStorage.setItem('jsonitems',JSON.stringify(arr));
+        update();
+    }
+    else 
+    {
+        alert("The list has not been deleted.");
+    }
+   
 }
