@@ -12,7 +12,7 @@ MAJOR FUNCTIONALITIES:-
 
 
 MINOR FUNCTIONALITIES + BUGS:-
-1)Clear input fields after user have added task
+1)Clear input fields after user have added task   (DONE)
 3)Deactivate "add to list" button b/c currently empty tasks are adding to the list.
 4)Deactivate "delete full list" button if list is empty.
 5)Replace "ok" & "cancel" with "Yes or No" after clicking delete full list button.

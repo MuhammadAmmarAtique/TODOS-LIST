@@ -1,97 +1,73 @@
-// Adding Click Event in "Add to List" button
-
-function getAndupdate() 
-{
-    
-    let tit=document.getElementById('title').value;
-    let desc=document.getElementById('description').value;
-        
-    if(localStorage.getItem('jsonitems')==null)
-    {
-        let arr=[];
-        arr.push([tit,desc]);
-        localStorage.setItem('jsonitems',JSON.stringify(arr));
-    }
-    
-    else
-    {
-       let arrstring=localStorage.getItem('jsonitems');
-       arr=JSON.parse(arrstring);
-       arr.push([tit,desc]);
-       localStorage.setItem('jsonitems',JSON.stringify(arr));
-    }
-    update();
+// Function to get tasks from local storage
+function getTasks() {
+    return JSON.parse(localStorage.getItem('jsonitems')) || [];
 }
 
+// Function to update tasks in the table
+function updateTable() {
+    const tasks = getTasks();
+    const tableBody = document.getElementById("tablebody");
+    let tableHTML = "";
 
-function update ()
-{
-    if(localStorage.getItem('jsonitems')==null)
-    {
-        let arr=[];
-        localStorage.setItem('jsonitems',JSON.stringify(arr));
-    }
-    
-    else
-    {
-       let arrstring=localStorage.getItem('jsonitems');
-       arr=JSON.parse(arrstring);
-    }
-
-    // Adding Data from local Storage to Table(Populating the table)
-    
-    let tablebody = document.getElementById("tablebody");
-    let str="";
-    
-    arr.forEach((element,index) => {
-    str +=`
-    <tr>
-    <th scope="row">${index + 1}</th>
-    <td>${element[0]}</td>
-    <td>${element[1]}</td> 
-    <td> <button class="btn btn-primary btn-sm" onclick="remove(${index})">Delete</button> </td> 
-    </tr>
-    `  
+    tasks.forEach((task, index) => {
+        tableHTML += `
+            <tr>
+                <th scope="row">${index + 1}</th>
+                <td>${task[0]}</td>
+                <td>${task[1]}</td> 
+                <td><button class="btn btn-primary btn-sm" onclick="removeTask(${index})">Delete</button></td>
+            </tr>`;
     });
-    // remove function is calling in above line
-    
-    tablebody.innerHTML=str;
+
+    tableBody.innerHTML = tableHTML;
 }
 
-let addbtn=document.getElementById('add');
-addbtn.addEventListener('click',getAndupdate);
-update();
+// Function to add a new task
+function addTask() {
+    const title = document.getElementById('title').value;
+    const description = document.getElementById('description').value;
 
-
-// Activating delete button from "your items section"
-function remove (index)
-{
-    // console.log("deleted list item:",index+1);
-
-    let arrstring=localStorage.getItem('jsonitems');
-    arr=JSON.parse(arrstring);
-    // Deleting given index element from the array using splice()
-    arr.splice(index,1);
-    localStorage.setItem('jsonitems',JSON.stringify(arr));
-    update();
-}
-
-
-// Added Delete Full list button
-function deletefulllist() 
-{
-   let confirmationmsg= confirm("Are you sure you want to delete the full list?");
-    if (confirmationmsg) 
-    {
-        let arrstring=localStorage.getItem('jsonitems');
-        arr=JSON.parse(arrstring);
-        arr.splice(0);
-        localStorage.setItem('jsonitems',JSON.stringify(arr));
-        update();
+    if (!title || !description) {
+        alert("Title and description are required!");
+        //Clearing input fields
+        document.getElementById('title').value="";
+        document.getElementById('description').value="";
+        return;
     }
-    else 
-    {
+
+    const tasks = getTasks();
+    tasks.push([title, description]);
+    localStorage.setItem('jsonitems', JSON.stringify(tasks));
+
+    updateTable();
+
+    //Clearing input fields after task is added
+    document.getElementById('title').value="";
+    document.getElementById('description').value="";
+}
+
+// Function to remove a task by index
+function removeTask(index) {
+    const tasks = getTasks();
+    tasks.splice(index, 1);
+    localStorage.setItem('jsonitems', JSON.stringify(tasks));
+    updateTable();
+}
+
+// Function to delete the full list
+function deleteFullList() {
+    const confirmationMsg = confirm("Are you sure you want to delete the full list?");
+    if (confirmationMsg) {
+        localStorage.removeItem('jsonitems');
+        updateTable();
+    } else {
         alert("The list has not been deleted.");
     }
-   
 }
+
+// Event listeners
+document.querySelector("#add").addEventListener('click', addTask);
+document.querySelector("#deleteFullList").addEventListener('click', deleteFullList);
+
+// Initial update
+updateTable();
