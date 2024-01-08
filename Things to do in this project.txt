@@ -1,0 +1,21 @@
+MAJOR FUNCTIONALITIES:-
+1)Activate Search Functionality (it will work for title i.e it will match kw's with title)
+2)Edit Functionality (M.imp)
+3)Filter Functionality
+4)Add images in notes
+5)Add todos/radios buttons( like i have did this task or not)
+6)Add reminder(alarm)
+7)Try to use database for storing data
+8)Add dark theme
+
+
+
+
+MINOR FUNCTIONALITIES + BUGS:-
+1)Clear input fields after user have added task
+3)Deactivate "add to list" button b/c currently empty tasks are adding to the list.
+4)Deactivate "delete full list" button if list is empty.
+5)Replace "ok" & "cancel" with "Yes or No" after clicking delete full list button.
+6)Show message in "Your tasks" section so that user can knows list is empty.
+7)When deleting the task ask for permission also, because it may have important data of user.
+8)Make navbar sticky
