@@ -29,9 +29,6 @@ function addTask() {
 
     if (!title || !description) {
         alert("Title and description are required!");
-        //Clearing input fields
-        document.getElementById('title').value="";
-        document.getElementById('description').value="";
         return;
     }
 
