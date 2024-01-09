@@ -1,5 +1,5 @@
 MAJOR FUNCTIONALITIES:-
-1)Activate Search Functionality (it will work for title i.e it will match kw's with title)
+1)Activate Search Functionality (it will work for title i.e it will match kw's with title)          ***(DONE)
 2)Edit Functionality (M.imp)
 3)Filter Functionality
 4)Add images in notes
@@ -12,7 +12,7 @@ MAJOR FUNCTIONALITIES:-
 
 
 MINOR FUNCTIONALITIES + BUGS:-
-1)Clear input fields after user have added task   (DONE)
+1)Clear input fields after user have added task                                        ***(DONE)
 3)Deactivate "add to list" button b/c currently empty tasks are adding to the list.
 4)Deactivate "delete full list" button if list is empty.
 5)Replace "ok" & "cancel" with "Yes or No" after clicking delete full list button.
