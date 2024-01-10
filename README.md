@@ -13,6 +13,7 @@ This repository contains a simple web application for managing your TODO list. I
 - **Manage Tasks:** View, edit, and delete individual tasks as needed.
 - **Clear All:** Remove all tasks from your list with a single click.
 - **Responsive:** Designed to work seamlessly on various screen sizes.
+- **Search:** Search Tasks from the List.
 
 ## Getting Started
 
