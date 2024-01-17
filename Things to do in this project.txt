@@ -12,10 +12,25 @@ MAJOR FUNCTIONALITIES:-
 
 
 MINOR FUNCTIONALITIES + BUGS:-
-1)Clear input fields after user have added task                                        ***(DONE)
-3)Deactivate "add to list" button b/c currently empty tasks are adding to the list.
-4)Deactivate "delete full list" button if list is empty.
-5)Replace "ok" & "cancel" with "Yes or No" after clicking delete full list button.
-6)Show message in "Your tasks" section so that user can knows list is empty.
-7)When deleting the task ask for permission also, because it may have important data of user.
-8)Make navbar sticky
+
+1. Clear Input Fields:    ***(DONE)
+   - Issue: ToDOs web app doesnot clears the input fields after adding a task.
+
+2. Deactivate "Add to List" Button:
+   - Issue: Currently, the "Add to List" button is not deactivated after adding a task.
+   
+3. Deactivate "Delete Full List" Button:
+   - Issue: The "Delete Full List" button should be disabled when the list is empty.
+
+4. Replace "OK" & "Cancel" with "Yes or No" after clicking "Delete Full List" Button:
+   - Issue: The confirmation message should use "Yes" and "No" for clarity.
+ 
+5. Show Message in "Your Tasks" Section When the List is Empty:
+   - Issue: Currently, there is no message displayed when the task list is empty.
+
+6. Ask for Confirmation When Deleting a Task:
+   - Issue: There is no confirmation when deleting an individual task.
+
+7. Make Navbar Sticky: ***(DONE)
+   - Issue: The navbar is not sticky.
+   - Suggestion: Add the `sticky-top` class to the `<nav>` element to make it sticky.
