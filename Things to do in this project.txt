@@ -8,9 +8,6 @@ MAJOR FUNCTIONALITIES:-
 7)Try to use database for storing data
 8)Add dark theme
 
-
-
-
 MINOR FUNCTIONALITIES + BUGS:-
 
 1. Clear Input Fields:    ***(DONE)
